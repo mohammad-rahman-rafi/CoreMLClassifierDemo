@@ -1,6 +1,6 @@
 //
 //  FrameExtractor.swift
-//  Created by Bobo on 29/12/2016.
+//  Modified on 2018/02/20.
 //
 
 import UIKit

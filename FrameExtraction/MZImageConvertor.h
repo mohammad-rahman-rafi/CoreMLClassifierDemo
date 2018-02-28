@@ -2,8 +2,7 @@
 //  MZImageconvertor.h
 //  FrameExtraction
 //
-//  Created by Meirtz on 2017/6/7.
-//  Copyright © 2017年 bRo. All rights reserved.
+//  Modified on 2018/02/20.
 //
 
 

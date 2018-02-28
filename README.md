@@ -1,6 +1,6 @@
 # Core ML Real-time Classifier Demo
 
-A real-time classifier demo using Core ML and Resnet50 model on iOS 11.
+This app classifies object on real time using Core ML and Resnet50 model on iOS 11, and states top two predictions with their probabilities. 
 
 
 
@@ -29,10 +29,6 @@ You can use other model as well, but you need to convert other model to .mlmodel
 Since real-time forward propagation of nerual network require many hardware resources, you may encounter a number of thermal and performance issues, and don't turn on low-battery mode while runing this app in order to gain better performance.
 
 ## License
-
-The MIT License (MIT)
-
-Copyright (c) 2017 Chevalier Meirtz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

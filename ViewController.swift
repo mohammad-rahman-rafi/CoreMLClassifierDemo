@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Created by Bobo on 29/12/2016.
+//  Modified on 2018/02/20.
 //
 import UIKit
 import AVFoundation
@@ -19,8 +19,12 @@ class ViewController: UIViewController, FrameExtractorDelegate {
 
     var maxProb:Double = 0.0
     var labelWithMaxProb = "0"
+    
+    var secondMaxProb:Double = 0.0
+    var labelWithSecondMaxProb = "0"
 
-
+    var sortedPredictions: [(key: String, value: Double)] = []
+    
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
 
@@ -51,17 +55,30 @@ class ViewController: UIViewController, FrameExtractorDelegate {
                         fatalError("Unexpected runtime error.")
                     }
                     let dict = prediction.classLabelProbs
-                    self.maxProb = dict.values.max()!
-                    for (key, value) in dict {
-                        if value == self.maxProb {
-                            self.labelWithMaxProb = key
-                            break
+                    
+                    if !dict.isEmpty {
+                        self.sortedPredictions = dict.sorted{ $0.value > $1.value }
+                        if self.sortedPredictions.count == 1 {
+                            self.labelWithMaxProb = self.sortedPredictions.first!.key
+                            self.maxProb = self.sortedPredictions.first!.value
+                        }
+                        else {
+                            self.labelWithMaxProb = self.sortedPredictions.first!.key
+                            self.maxProb = self.sortedPredictions.first!.value
+                            
+                            self.labelWithSecondMaxProb = self.sortedPredictions[1].key
+                            self.secondMaxProb = self.sortedPredictions[1].value
                         }
                     }
+                    
+                    
                     DispatchQueue.main.async {
-                        self.resultLabel.text = self.labelWithMaxProb
-                        self.resultProbLabel.text = String(format:"%.4f%%", self.maxProb)
-                    }
+                        self.resultLabel.text = self.sortedPredictions.count == 1
+                            ? self.labelWithMaxProb : "1. \(self.labelWithMaxProb)\n 2. \(self.labelWithSecondMaxProb)"
+                        
+                        self.resultProbLabel.text = self.sortedPredictions.count == 1
+                            ? String(format:"%.4f%", self.maxProb) : String(format:"%.4f%", self.maxProb) + "\n" + String(format:"%.4f%", self.secondMaxProb) }
+                    
                 }
             }
         }
