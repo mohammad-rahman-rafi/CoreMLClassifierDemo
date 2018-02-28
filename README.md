@@ -38,3 +38,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Acknowledgments
 This project uses [FrameExtractor](https://github.com/b-r-o/FrameExtractor) for iOS camera frame extraction.
+# CMCD
