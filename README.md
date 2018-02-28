@@ -4,11 +4,7 @@ This app classifies object in real time using Core ML and Resnet50 model on iOS 
 
 
 
-<img src="./demo1.jpg" width="300">
-
-<img src="./demo2.jpg" width="300">
-
-<img src="./demo3.jpg" width="300">
+<img src="./demo1.jpg" width="300">     <img src="./demo2.jpg" width="300">     <img src="./demo3.jpg" width="300">
 
 
 
