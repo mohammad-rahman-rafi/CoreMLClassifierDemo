@@ -1,6 +1,6 @@
 # Core ML Real-time Classifier Demo
 
-This app classifies object in real time using Core ML and Resnet50 model on iOS 11, and states top two predictions with their probabilities. 
+This app classifies objects in real time using Core ML and Resnet50 model on iOS 11. It states top two predictions with their probability rates. 
 
 
 
